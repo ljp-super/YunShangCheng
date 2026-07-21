@@ -1,0 +1,85 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: mall-admin
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall_swarm?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+  data:
+    redis:
+      host: localhost
+      database: 0
+      port: 6379
+      password:
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+        client-options:
+          protocol-version: RESP2
+      client-type: lettuce
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    env:
+      show-values: always
+    configprops:
+      show-values: always
+    info:
+      access: read-only
+redis:
+  database: mall-swarm
+  key:
+    admin: 'ums:admin'
+  expire:
+    common: 86400
+jwt:
+  secret: mall-admin-secret
+  expiration: 604800
+  tokenHeader: Authorization
+  tokenHead: "Bearer "
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    doc-expansion: 'none'
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  group-configs:
+    - group: 'default'
+      packages-to-scan: com.macro.mall.controller
+  default-flat-param-object: false

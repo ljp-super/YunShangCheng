@@ -1,0 +1,187 @@
+@use './variables.scss' as vars;
+@use './mixin.scss';
+@use './transition.scss';
+@use './element-ui.scss';
+@use './sidebar.scss';
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family:
+    'Helvetica Neue',
+    Helvetica,
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    Arial,
+    sans-serif;
+  background-color: vars.$bg-color;
+  color: vars.$text-primary;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div:focus {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}
+
+.app-main {
+  min-height: 100%;
+  padding: 24px;
+}
+
+.app-container {
+  padding: 24px;
+  background: vars.$bg-white;
+  border-radius: vars.$radius-lg;
+  box-shadow: vars.$shadow-sm;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 20px;
+  background: vars.$bg-white;
+  border-radius: vars.$radius-md;
+  box-shadow: vars.$shadow-sm;
+  margin-bottom: 20px;
+}
+
+.operate-container {
+  margin-top: 20px;
+}
+
+.operate-container .btn-add {
+  float: right;
+}
+
+.table-container {
+  margin-top: 20px;
+  background: vars.$bg-white;
+  border-radius: vars.$radius-md;
+  box-shadow: vars.$shadow-sm;
+  overflow: hidden;
+}
+
+.batch-operate-container {
+  display: inline-flex;
+  width: 250px;
+  margin-top: 20px;
+}
+
+.pagination-container {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 720px;
+  padding: 35px 35px 15px 35px;
+  margin: 20px auto;
+}
+
+.font-extra-large {
+  font-size: 24px;
+  font-weight: 600;
+  color: vars.$text-primary;
+}
+
+.font-title-large {
+  font-size: 20px;
+  font-weight: 600;
+  color: vars.$text-primary;
+}
+
+.font-title-medium {
+  font-size: 18px;
+  font-weight: 500;
+  color: vars.$text-primary;
+}
+
+.font-medium {
+  font-size: 16px;
+  color: vars.$text-regular;
+}
+
+.font-small {
+  font-size: 14px;
+  color: vars.$text-regular;
+}
+
+.font-extra-small {
+  font-size: 13px;
+  color: vars.$text-secondary;
+}
+
+.el-icon-middle {
+  vertical-align: middle;
+  margin-right: 4px;
+  margin-top: -2px;
+}
+
+.color-main {
+  color: vars.$primary-color;
+}
+
+.color-success {
+  color: vars.$success-color;
+}
+
+.color-warning {
+  color: vars.$warning-color;
+}
+
+.color-danger {
+  color: vars.$danger-color;
+}
+
+.color-info {
+  color: vars.$info-color;
+}
+
+.card-hover {
+  transition: all vars.$transition-normal;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: vars.$shadow-lg;
+  }
+}

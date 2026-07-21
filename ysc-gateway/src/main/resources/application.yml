@@ -1,0 +1,74 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: ysc-gateway
+  profiles:
+    active: local
+  cloud:
+    nacos:
+      config:
+        import-check:
+          enabled: false
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: false
+  data:
+    redis:
+      database: 0
+      port: 6379
+      host: localhost
+      password:
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+      client-type: lettuce
+secure:
+  ignore:
+    urls:
+      - "/admin/login"
+      - "/admin/register"
+      - "/admin/minio/upload"
+      - "/swagger-ui/**"
+      - "/v3/api-docs/**"
+      - "/doc.html"
+      - "/webjars/**"
+      - "/favicon.ico"
+      - "/actuator/**"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    env:
+      show-values: always
+    configprops:
+      show-values: always
+    info:
+      access: read-only
+knife4j:
+  gateway:
+    enabled: true
+    strategy: discover
+    discover:
+      version: openapi3
+      enabled: true
+      excluded-services: mall-monitor
+    tags-sorter: order
+    operations-sorter: order
+jwt:
+  secret: mall-admin-secret
+  expiration: 604800
+  tokenHeader: Authorization
+  tokenHead: Bearer 
+skywalking:
+  trace:
+    ignore-path: /actuator/**,/webjars/**,/v3/api-docs/**,/swagger-ui/**,/favicon.ico 

@@ -1,0 +1,247 @@
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.el-dialog__header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 100%);
+  border-bottom: 1px solid #EBEEF5;
+}
+
+.el-dialog__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.el-dialog__body {
+  padding: 24px;
+}
+
+.el-dialog__footer {
+  padding: 16px 24px;
+  background: #FAFBFC;
+  border-top: 1px solid #EBEEF5;
+}
+
+.el-table {
+  --el-table-header-bg-color: #F8FAFC;
+  --el-table-row-hover-bg-color: #F5F7FA;
+  --el-table-border-color: #EBEEF5;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.el-table th {
+  font-weight: 600;
+  color: #606266;
+  background: #F8FAFC;
+  border-bottom: 2px solid #EBEEF5;
+}
+
+.el-table td {
+  color: #606266;
+  border-bottom: 1px solid #EBEEF5;
+}
+
+.el-table tr:hover > td {
+  background: #F5F7FA !important;
+}
+
+.el-button {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.el-button--primary {
+  background: linear-gradient(135deg, #409EFF 0%, #66B1FF 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(64, 158, 255, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #66B1FF 0%, #83BFFF 100%);
+    box-shadow: 0 4px 12px rgba(64, 158, 255, 0.4);
+  }
+}
+
+.el-button--success {
+  background: linear-gradient(135deg, #67C23A 0%, #85CE61 100%);
+  border: none;
+}
+
+.el-button--warning {
+  background: linear-gradient(135deg, #E6A23C 0%, #EEBE77 100%);
+  border: none;
+}
+
+.el-button--danger {
+  background: linear-gradient(135deg, #F56C6C 0%, #F89898 100%);
+  border: none;
+}
+
+.el-input__wrapper {
+  border-radius: 8px;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  border: 1px solid #DCDFE6;
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.1);
+    border-color: #C0C4CC;
+  }
+
+  &.is-focus {
+    box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
+    border-color: #409EFF;
+  }
+}
+
+.el-select .el-input__wrapper {
+  border-radius: 8px;
+}
+
+.el-form-item__label {
+  font-weight: 500;
+  color: #606266;
+}
+
+.el-pagination {
+  .el-pager li {
+    border-radius: 6px;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+
+    &.is-active {
+      background: #409EFF;
+      color: #ffffff;
+    }
+
+    &:hover:not(.is-disabled) {
+      color: #409EFF;
+    }
+  }
+
+  .btn-prev,
+  .btn-next {
+    border-radius: 6px;
+  }
+}
+
+.el-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: none;
+}
+
+.el-card__header {
+  padding: 20px 24px;
+  background: #FAFBFC;
+  border-bottom: 1px solid #EBEEF5;
+}
+
+.el-card__body {
+  padding: 24px;
+}
+
+.el-menu {
+  --el-menu-item-height: 44px;
+}
+
+.el-menu-item,
+.el-sub-menu__title {
+  border-radius: 8px;
+  margin: 4px 8px;
+}
+
+.el-tag {
+  border-radius: 4px;
+}
+
+.el-radio__label,
+.el-checkbox__label {
+  color: #606266;
+}
+
+.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+  color: #909399;
+}
+
+.el-breadcrumb__separator {
+  color: #C0C4CC;
+}
+
+.el-loading-mask {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.el-message-box {
+  border-radius: 12px;
+}
+
+.el-message-box__header {
+  padding: 20px 24px;
+  background: #FAFBFC;
+  border-bottom: 1px solid #EBEEF5;
+}
+
+.el-message-box__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.el-message-box__content {
+  padding: 24px;
+}
+
+.el-message-box__footer {
+  padding: 16px 24px;
+  background: #FAFBFC;
+  border-top: 1px solid #EBEEF5;
+}
+
+.el-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #DCDFE6;
+    border-radius: 3px;
+
+    &:hover {
+      background: #C0C4CC;
+    }
+  }
+}
